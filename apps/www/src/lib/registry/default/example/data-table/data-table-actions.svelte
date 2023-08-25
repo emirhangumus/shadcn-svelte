@@ -21,9 +21,7 @@
 	<DropdownMenu.Content>
 		<DropdownMenu.Group>
 			<DropdownMenu.Label>Actions</DropdownMenu.Label>
-			<DropdownMenu.Item
-				on:m-click={() => navigator.clipboard.writeText(id)}
-			>
+			<DropdownMenu.Item on:click={() => navigator.clipboard.writeText(id)}>
 				Copy payment ID
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>

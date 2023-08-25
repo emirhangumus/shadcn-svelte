@@ -11,13 +11,9 @@
 </script>
 
 <AlertDialogPrimitive.Cancel
-	class={cn(
-		buttonVariants({ variant: "outline" }),
-		"mt-2 sm:mt-0",
-		className
-	)}
+	class={cn(buttonVariants({ variant: "outline" }), "mt-2 sm:mt-0", className)}
 	{...$$restProps}
-	on:m-click
+	on:click
 >
 	<slot />
 </AlertDialogPrimitive.Cancel>

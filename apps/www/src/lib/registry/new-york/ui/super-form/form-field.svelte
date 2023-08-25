@@ -23,7 +23,7 @@
 			//@ts-expect-error - do we leave this as is, or do we want to force the type to match the schema?
 			// Pros: we don't have to deal with type coercion in the form, and since we're runtime validating with
 			// zod anyway, we aren't _really_ losing type safety.
-			value.set(v);
+			value.set(v.value);
 		},
 		handleInput: (
 			e: Event & {

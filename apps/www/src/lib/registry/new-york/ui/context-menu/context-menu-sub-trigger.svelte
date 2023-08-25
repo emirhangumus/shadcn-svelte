@@ -20,7 +20,7 @@
 		className
 	)}
 	{...$$restProps}
-	on:m-click
+	on:click
 >
 	<slot />
 	<ChevronRight class="ml-auto h-4 w-4" />

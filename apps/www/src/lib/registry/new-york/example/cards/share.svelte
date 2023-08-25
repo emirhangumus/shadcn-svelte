@@ -6,24 +6,35 @@
 	import * as Select from "@/registry/new-york/ui/select";
 	import { Separator } from "@/registry/new-york/ui/separator";
 
+	const permissions = {
+		view: {
+			value: "view",
+			label: "Can view"
+		},
+		edit: {
+			value: "edit",
+			label: "Can edit"
+		}
+	};
+
 	const people = [
 		{
 			name: "Olivia Martin",
 			email: "m@example.com",
 			avatar: "/avatars/03.png",
-			permission: "edit"
+			permission: permissions.edit
 		},
 		{
 			name: "Isabella Nguyen",
 			email: "b@example.com",
 			avatar: "/avatars/05.png",
-			permission: "view"
+			permission: permissions.view
 		},
 		{
 			name: "Sofia Davis",
 			email: "p@example.com",
 			avatar: "/avatars/01.png",
-			permission: "view"
+			permission: permissions.view
 		}
 	];
 </script>
@@ -63,16 +74,14 @@
 								</p>
 							</div>
 						</div>
-						<Select.Root value={person.permission}>
+						<Select.Root selected={person.permission}>
 							<Select.Trigger class="ml-auto w-[110px]">
 								<Select.Value placeholder="Select" />
 							</Select.Trigger>
 							<Select.Content>
-								<Select.Item value="edit" label="Can edit"
-									>Can edit</Select.Item
+								<Select.Item value="edit" label="Can edit">Can edit</Select.Item
 								>
-								<Select.Item value="view" label="Can view"
-									>Can view</Select.Item
+								<Select.Item value="view" label="Can view">Can view</Select.Item
 								>
 							</Select.Content>
 						</Select.Root>
@@ -85,15 +94,11 @@
 							<Avatar.Fallback>IN</Avatar.Fallback>
 						</Avatar.Root>
 						<div>
-							<p class="text-sm font-medium leading-none">
-								Isabella Nguyen
-							</p>
-							<p class="text-sm text-muted-foreground">
-								b@example.com
-							</p>
+							<p class="text-sm font-medium leading-none">Isabella Nguyen</p>
+							<p class="text-sm text-muted-foreground">b@example.com</p>
 						</div>
 					</div>
-					<Select.Root value="view">
+					<Select.Root selected={{ value: "view", label: "Can view" }}>
 						<Select.Trigger class="ml-auto w-[110px]">
 							<Select.Value placeholder="Select" />
 						</Select.Trigger>
@@ -110,15 +115,11 @@
 							<Avatar.Fallback>SD</Avatar.Fallback>
 						</Avatar.Root>
 						<div>
-							<p class="text-sm font-medium leading-none">
-								Sofia Davis
-							</p>
-							<p class="text-sm text-muted-foreground">
-								p@example.com
-							</p>
+							<p class="text-sm font-medium leading-none">Sofia Davis</p>
+							<p class="text-sm text-muted-foreground">p@example.com</p>
 						</div>
 					</div>
-					<Select.Root value="view">
+					<Select.Root selected={{ value: "view", label: "Can view" }}>
 						<Select.Trigger class="ml-auto w-[110px]">
 							<Select.Value placeholder="Select" />
 						</Select.Trigger>

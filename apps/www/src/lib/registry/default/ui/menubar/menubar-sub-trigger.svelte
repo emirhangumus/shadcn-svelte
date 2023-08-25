@@ -19,7 +19,7 @@
 		inset && "pl-8",
 		className
 	)}
-	on:m-click
+	on:click
 	{...$$restProps}
 >
 	<slot />

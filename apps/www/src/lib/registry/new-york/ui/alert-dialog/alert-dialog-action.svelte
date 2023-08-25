@@ -13,7 +13,7 @@
 <AlertDialogPrimitive.Action
 	class={cn(buttonVariants(), className)}
 	{...$$restProps}
-	on:m-click
+	on:click
 >
 	<slot />
 </AlertDialogPrimitive.Action>

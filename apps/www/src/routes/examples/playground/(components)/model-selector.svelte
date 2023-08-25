@@ -26,14 +26,13 @@
 			</div>
 		</HoverCard.Trigger>
 		<HoverCard.Content class="w-[260px] text-sm">
-			The model which will generate the completion. Some models are
-			suitable for natural language tasks, others specialize in code.
-			Learn more.
+			The model which will generate the completion. Some models are suitable for
+			natural language tasks, others specialize in code. Learn more.
 		</HoverCard.Content>
 	</HoverCard.Root>
 	<Select.Root
 		bind:open
-		value={selectedModel.id}
+		selected={{ value: selectedModel.id, label: selectedModel.name }}
 		positioning={{ placement: "bottom-end", sameWidth: false }}
 		loop
 	>
@@ -65,11 +64,7 @@
 							</div>
 							{#if peekedModel.strengths}
 								<div class="mt-4 grid gap-2">
-									<h5
-										class="text-sm font-medium leading-none"
-									>
-										Strengths
-									</h5>
+									<h5 class="text-sm font-medium leading-none">Strengths</h5>
 									<ul class="text-sm text-muted-foreground">
 										{peekedModel.strengths}
 									</ul>
@@ -85,7 +80,7 @@
 								<Select.Item
 									value={model.id}
 									label={model.name}
-									on:m-focusin={() => handlePeek(model)}
+									on:focusin={() => handlePeek(model)}
 								>
 									{model.name}
 								</Select.Item>

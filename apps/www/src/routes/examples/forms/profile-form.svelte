@@ -41,24 +41,18 @@
 >
 	<Form.Field {form} name="username" let:field>
 		<Form.Label>Username</Form.Label>
-		<Input
-			placeholder="shadcn"
-			{...field.attrs}
-			on:input={field.handleInput}
-		/>
+		<Input placeholder="shadcn" {...field.attrs} on:input={field.handleInput} />
 		<Form.Description>
-			This is your public display name. It can be your real name or a
-			pseudonym. You can only change this once every 30 days.
+			This is your public display name. It can be your real name or a pseudonym.
+			You can only change this once every 30 days.
 		</Form.Description>
 		<Form.Message />
 	</Form.Field>
 	<Form.Field {form} name="email" let:field>
 		<Form.Label>Email</Form.Label>
-		<Select.Root onValueChange={field.updateValue}>
+		<Select.Root onSelectedChange={field.updateValue}>
 			<Select.Trigger {...field.attrs}>
-				<Select.Value
-					placeholder="Select a verified email to display"
-				/>
+				<Select.Value placeholder="Select a verified email to display" />
 				<Select.Input name={field.attrs.name} />
 			</Select.Trigger>
 			<Select.Content>
@@ -89,8 +83,7 @@
 			on:input={field.handleInput}
 		/>
 		<Form.Description>
-			You can <span>@mention</span> other users and organizations to link to
-			them.
+			You can <span>@mention</span> other users and organizations to link to them.
 		</Form.Description>
 		<Form.Message />
 	</Form.Field>

@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  mdsvex@0.10.6:
-    hash: 5fktxa7rcgmqj2wc4xhmk3osl4
-    path: ./patches/mdsvex@0.10.6.patch
-
 dependencies:
   '@unovis/svelte':
     specifier: ^1.2.0
@@ -17,8 +12,8 @@ dependencies:
     specifier: ^1.2.0
     version: 1.2.0
   bits-ui:
-    specifier: ^0.0.24
-    version: 0.0.24(@sveltejs/kit@1.22.6)(svelte@4.2.0)
+    specifier: ^0.0.31
+    version: 0.0.31(@sveltejs/kit@1.22.6)(svelte@4.2.0)
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -113,7 +108,7 @@ devDependencies:
     version: 4.5.0
   mdsvex:
     specifier: 0.10.6
-    version: 0.10.6(patch_hash=5fktxa7rcgmqj2wc4xhmk3osl4)(svelte@4.2.0)
+    version: 0.10.6(svelte@4.2.0)
   postcss:
     specifier: ^8.4.28
     version: 8.4.28
@@ -899,8 +894,8 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@melt-ui/svelte@0.37.2(svelte@4.2.0):
-    resolution: {integrity: sha512-MdFnsY/yL2p/y0m2PqaM/tGmJ/ZsUAhACksPXCbrTXBw042rHkZHC8ykp5E5MVXGPn/eWc9nt9Vh3tmB+2CjXw==}
+  /@melt-ui/svelte@0.37.5(svelte@4.2.0):
+    resolution: {integrity: sha512-bQ368VNw8tTT7DrD9/6KMU6O/NRBoZlh4pUv4tQVVlgBq5G9ZnKJ/5nJ28EE2ONd8jwykTTIHBVBpEtEVF8Hlw==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
@@ -1379,6 +1374,10 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
+  /@types/unist@3.0.0:
+    resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: false
+
   /@typescript-eslint/eslint-plugin@6.4.0(@typescript-eslint/parser@6.4.0)(eslint@8.47.0)(typescript@5.1.6):
     resolution: {integrity: sha512-62o2Hmc7Gs3p8SLfbXcipjWAa6qk2wZGChXG2JbBtYpwSRmti/9KHLqfbLs9uDigOexG+3PaQ9G2g3201FWLKg==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -1780,17 +1779,18 @@ packages:
     dependencies:
       file-uri-to-path: 1.0.0
 
-  /bits-ui@0.0.24(@sveltejs/kit@1.22.6)(svelte@4.2.0):
-    resolution: {integrity: sha512-o3wk0JoiXHzpI9ekxXYetCle4bihG8lSeL/3nPQHul7/1+iK9DFiB/vUaNSGAdNLvg70Kmgmm/EpTMvDlwoYxA==}
+  /bits-ui@0.0.31(@sveltejs/kit@1.22.6)(svelte@4.2.0):
+    resolution: {integrity: sha512-L+wmPEcbakuOlxQXVdKxHt7B50YKnCDPDNUn+LvVkwZnGZuAOSLgPe3WlWxoQL+M5gsD1X2WlmnUz3j99VkYMw==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
-      '@melt-ui/svelte': 0.37.2(svelte@4.2.0)
+      '@melt-ui/svelte': 0.37.5(svelte@4.2.0)
       '@sveltejs/adapter-vercel': 3.0.3(@sveltejs/kit@1.22.6)
       nanoid: 4.0.2
       shiki: 0.14.3
       svelte: 4.2.0
       tailwind-merge: 1.14.0
+      unist-builder: 4.0.0
     transitivePeerDependencies:
       - '@sveltejs/kit'
       - encoding
@@ -3432,7 +3432,7 @@ packages:
   /mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
 
-  /mdsvex@0.10.6(patch_hash=5fktxa7rcgmqj2wc4xhmk3osl4)(svelte@4.2.0):
+  /mdsvex@0.10.6(svelte@4.2.0):
     resolution: {integrity: sha512-aGRDY0r5jx9+OOgFdyB9Xm3EBr9OUmcrTDPWLB7a7g8VPRxzPy4MOBmcVYgz7ErhAJ7bZ/coUoj6aHio3x/2mA==}
     peerDependencies:
       svelte: 3.x
@@ -3443,7 +3443,6 @@ packages:
       svelte: 4.2.0
       vfile-message: 2.0.4
     dev: true
-    patched: true
 
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -4962,6 +4961,12 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: true
+
+  /unist-builder@4.0.0:
+    resolution: {integrity: sha512-wmRFnH+BLpZnTKpc5L7O67Kac89s9HMrtELpnNaE6TAobq5DTZZs5YaTQfAZBA9bFPECx2uVAPO31c+GVug8mg==}
+    dependencies:
+      '@types/unist': 3.0.0
+    dev: false
 
   /unist-util-is@5.2.1:
     resolution: {integrity: sha512-u9njyyfEh43npf1M+yGKDGVPbY/JWEemg5nH05ncKPfi+kBbKBJoTdsogMu33uhytuLlv9y0O7GH7fEdwLdLQw==}

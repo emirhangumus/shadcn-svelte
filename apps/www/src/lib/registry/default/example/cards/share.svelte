@@ -30,15 +30,11 @@
 							<Avatar.Fallback>OM</Avatar.Fallback>
 						</Avatar.Root>
 						<div>
-							<p class="text-sm font-medium leading-none">
-								Olivia Martin
-							</p>
-							<p class="text-sm text-muted-foreground">
-								m@example.com
-							</p>
+							<p class="text-sm font-medium leading-none">Olivia Martin</p>
+							<p class="text-sm text-muted-foreground">m@example.com</p>
 						</div>
 					</div>
-					<Select.Root value="edit">
+					<Select.Root selected={{ value: "edit", label: "Can edit" }}>
 						<Select.Trigger class="ml-auto w-[110px]">
 							<Select.Value placeholder="Select" />
 						</Select.Trigger>
@@ -55,15 +51,11 @@
 							<Avatar.Fallback>IN</Avatar.Fallback>
 						</Avatar.Root>
 						<div>
-							<p class="text-sm font-medium leading-none">
-								Isabella Nguyen
-							</p>
-							<p class="text-sm text-muted-foreground">
-								b@example.com
-							</p>
+							<p class="text-sm font-medium leading-none">Isabella Nguyen</p>
+							<p class="text-sm text-muted-foreground">b@example.com</p>
 						</div>
 					</div>
-					<Select.Root value="view">
+					<Select.Root selected={{ value: "view", label: "Can view" }}>
 						<Select.Trigger class="ml-auto w-[110px]">
 							<Select.Value placeholder="Select" />
 						</Select.Trigger>
@@ -80,15 +72,11 @@
 							<Avatar.Fallback>SD</Avatar.Fallback>
 						</Avatar.Root>
 						<div>
-							<p class="text-sm font-medium leading-none">
-								Sofia Davis
-							</p>
-							<p class="text-sm text-muted-foreground">
-								p@example.com
-							</p>
+							<p class="text-sm font-medium leading-none">Sofia Davis</p>
+							<p class="text-sm text-muted-foreground">p@example.com</p>
 						</div>
 					</div>
-					<Select.Root value="view">
+					<Select.Root selected={{ value: "view", label: "Can view" }}>
 						<Select.Trigger class="ml-auto w-[110px]">
 							<Select.Value placeholder="Select" />
 						</Select.Trigger>
